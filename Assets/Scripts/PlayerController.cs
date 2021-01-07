@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody playerRb;
     public float jumpForce;
+    public GameObject titleScreen;
+    public GameObject deathscreen;
     public float gravityModifier;
     public bool isOnGround = true;
     public bool gameOver = false;
@@ -16,13 +19,20 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip crashSound;
     private AudioSource playerAudio;
+
     // Start is called before the first frame update
     void Start()
+    {
+        
+    }
+
+    public void StartGame()
     {
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
         playerAudio = GetComponent<AudioSource>();
+        titleScreen.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -54,6 +64,7 @@ public class PlayerController : MonoBehaviour
             explosionParticle.Play();
             dirtParticle.Stop();
             playerAudio.PlayOneShot(crashSound, 1.0f);
+            deathscreen.gameObject.SetActive(true);
         }
         }
     
