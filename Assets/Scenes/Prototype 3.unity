@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ee2925a4c929a4da68cccfd9414429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 2
 --- !u!114 &530849437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ee2925a4c929a4da68cccfd9414429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 3
 --- !u!114 &1410784504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,6 +1395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ee2925a4c929a4da68cccfd9414429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficulty: 1
 --- !u!114 &1507837454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,7 +1629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcfc42e7823178642ace730650715b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 25
+  jumpForce: 15
   titleScreen: {fileID: 567194007}
   deathscreen: {fileID: 2101792621}
   gravityModifier: 4
