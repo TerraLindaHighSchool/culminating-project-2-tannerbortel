@@ -12,12 +12,13 @@ public class DifficultyButton : MonoBehaviour
     private RepeatBackground repeatBackground;
     public int difficulty;
 
+
     // Start is called before the first frame update
     void Start()
     {
         button = GetComponent<Button>();
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-        moveLeft = GameObject.Find("Background").GetComponent<MoveLeft>();
+        moveLeft = GameObject.Find("Crate_01").GetComponent<MoveLeft>();
         spawnManager = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
         repeatBackground = GameObject.Find("Background").GetComponent<RepeatBackground>();
         button.onClick.AddListener(SetDifficulty);
@@ -35,6 +36,5 @@ public class DifficultyButton : MonoBehaviour
         moveLeft.StartGame();
         spawnManager.StartGame(difficulty);
         repeatBackground.StartGame();
-
     }
 }

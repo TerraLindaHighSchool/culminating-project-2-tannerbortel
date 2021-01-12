@@ -19,11 +19,13 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip crashSound;
     private AudioSource playerAudio;
+    private MoveLeft moveLeft;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        moveLeft = GameObject.Find("Background").GetComponent<MoveLeft>();
+        moveLeft.UpdateScore(0);
     }
 
     public void StartGame()
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f);
+            moveLeft.UpdateScore(1);
         }
     }
       
@@ -65,6 +68,7 @@ public class PlayerController : MonoBehaviour
             dirtParticle.Stop();
             playerAudio.PlayOneShot(crashSound, 1.0f);
             deathscreen.gameObject.SetActive(true);
+            moveLeft.UpdateScore(0);
         }
         }
     
